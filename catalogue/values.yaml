@@ -1,0 +1,6 @@
+deployment:
+  imageURL: joindevops/catalogue
+  imageVersion: IMAGE_VERSION
+hpa:
+  maxReplicas: 10
+  utilisation: 75
