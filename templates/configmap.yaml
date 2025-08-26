@@ -9,4 +9,5 @@ metadata:
     tier: app
 data:
   MONGO: "true"
-  MONGO_URL: "mongodb://mongodb:27017/catalogue"
+  #MONGO_URL: "mongodb://mongodb:27017/catalogue"
+  MONGO_URL: {{ .Values.configMap.MONGO_URL }}
