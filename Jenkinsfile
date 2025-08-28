@@ -5,7 +5,7 @@ pipeline {
     environment { 
         appVersion = ''
         REGION = "us-east-1"
-        ACC_ID = "315069654700"
+        ACC_ID = "160885265516"
         PROJECT = "roboshop"
         COMPONENT = "catalogue"
     }
@@ -53,7 +53,8 @@ pipeline {
                             kubectl get nodes
                             kubectl apply -f 01-namespace.yaml
                             sed -i "s/IMAGE_VERSION/${params.appVersion}/g" values-${params.deploy_to}.yaml
-                            helm upgrade --install $COMPONENT -f values-${params.deploy_to}.yaml -n $PROJECT .
+                            #helm upgrade --install $COMPONENT -f values-${params.deploy_to}.yaml -n $PROJECT .
+                            kubectl apply -f application.yaml
                         """
                     }
                 }
